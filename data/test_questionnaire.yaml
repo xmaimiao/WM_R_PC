@@ -1,25 +1,25 @@
 test_teacher_all:
-#  - {username: pliu}
-#  - {username: test12}
+  - {username: pliu}
+  - {username: test12}
 #  - {username: xltang}
-#  - {username: test37-test}
-#  - {username: test38-test}
-#  - {username: test39-test}
-#  - {username: pyyan}
-#  - {username: duzhang}
-#  - {username: yjchen}
-#  - {username: kclei}
-#  - {username: test300}
-#  - {username: test301}
-#  - {username: test302}
+  - {username: test37-test}
+  - {username: test38-test}
+  - {username: test39-test}
+  - {username: pyyan}
+  - {username: duzhang}
+  - {username: yjchen}
+  - {username: kclei}
   - {username: test300}
   - {username: test301}
   - {username: test302}
+#  - {username: test300}
+#  - {username: test301}
+#  - {username: test302}
 
 test_student_all:
-  - {username: 1809853G-L011-0066,password: wemust}
-#  - {username: 1809853F-A011-0240,password: wemust@dev}
-#  - {username: 1809853D-B311-0013,password: wemust@dev}
+#  - {username: 1809853G-L011-0066,password: wemust}
+  - {username: 1809853F-A011-0240,password: wemust@dev}
+  - {username: 1809853D-B311-0013,password: wemust@dev}
 #  - {username: 1709853A-PA11-0119,password: wemust@dev}
-#  - {username: 1709853M-PA11-0050,password: wemust@dev}
-#  - {username: 1909853G-A111-0095,password: wemust#2020}
+  - {username: 1709853M-PA11-0050,password: wemust@dev}
+  - {username: 1909853G-A111-0095,password: wemust#2020}

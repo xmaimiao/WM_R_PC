@@ -32,9 +32,9 @@ class TestQuestionnaire:
         :param data:
         :return:
         '''
-        assert True == self.token(data["username"],str(self._password))
+        pytest.assume(True == self.token(data["username"],str(self._password)))
         try:
-            assert True == self.ques_t()['success']
+            pytest.assume( True == self.ques_t()['success'])
         except Exception as e:
             print(self.ques_t()['errorMsg'])
             raise e
@@ -46,9 +46,9 @@ class TestQuestionnaire:
         :param data:
         :return:
         '''
-        assert True == self.token(data["username"],str(self._password))
+        pytest.assume( True == self.token(data["username"],str(self._password)))
         try:
-            assert True == self.ques_s()['success']
+            pytest.assume( True == self.ques_s()['success'])
         except Exception as e:
             print("今日已提交過")
             raise e

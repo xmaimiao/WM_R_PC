@@ -1,0 +1,9 @@
+token:
+  method :  post
+  url : token-testing-studio/api/v1/oauth2/accessToken
+  headers:
+    Authorization: Authorization-testing-studio
+  data :
+         username: ${username}
+         grantType: password
+         password: ${password}

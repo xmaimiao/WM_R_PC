@@ -1,0 +1,38 @@
+questionnaire_s:
+  method :  post
+  url : testing-studio/student-health-mobiles?lang=zh_MO&nonce=592a1fdf-b741-41cc-a915-4fd621992715&signature=12
+  headers:
+    Authorization: ${token}
+  json :
+    discomfort: 0
+    discomfortReason: string
+    isOutside: 0
+    isStay: 1
+    leaveMo: 0
+    leaveMoBeen: string
+    outsideOtherReason: string
+    outsideReason: string
+    residentialPlace: MP
+    residentialPlaceExplain: string
+    roommateDiscomfort: 0
+    roommateDiscomfortReason: string
+    temperature: LT37
+    temperatureNum: 0
+
+questionnaire_t:
+  method :  post
+  url : testing-studio/teacher-health?lang=zh_MO&nonce=592a1fdf-b741-41cc-a915-4fd621992715&signature=12
+  headers:
+    Authorization: ${token}
+  json :
+    discomfort: 0
+    discomfortReason: string
+    familyDiscomfort: 0
+    familyDiscomfortReason: string
+    leaveMo: 0
+    leaveMoBeen: string
+    officeLocation: HOME
+    officeLocationExplain: string
+    residentialPlace: MP
+    residentialPlaceExplain: string
+    temperature: LT37

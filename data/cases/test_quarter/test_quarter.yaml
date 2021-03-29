@@ -1,0 +1,2825 @@
+test_survey_manages:
+#  - {username: deke1701, title: 2020年12月18日大学生心理健康调查问卷, params: {title: 大学生心理健康调查问卷,},expect: True }
+  - {username: mai1, title: 2020年12月18日大学生心理健康调查问卷, params: {title: 大学生心理健康调查问卷,},expect: True }
+  - {username: mai2, title: 2020年12月18日大学生心理健康调查问卷, params: {title: 大学生心理健康调查问卷,},expect: True }
+  - {username: mai3, title: 2020年12月18日大学生心理健康调查问卷, params: {title: 大学生心理健康调查问卷,},expect: True }
+  - {username: mai4, title: 2020年12月18日大学生心理健康调查问卷, params: {title: 大学生心理健康调查问卷,},expect: False }
+
+test_survey_manages1:
+#确认dev删除了待发布的问卷不生成数据
+#  - {username: deke1700, title: 2020/12/23JAVA笔试题28911,expect: False }
+#  - {username: deke1703, title: 2020/12/23JAVA笔试题28911,expect: False }
+#  - {username: deke1704, title: 2020/12/23JAVA笔试题28911,expect: False }
+#  - {username: deke1705, title: 2020/12/23JAVA笔试题28911,expect: False }
+#  - {username: deke1706, title: 2020/12/23JAVA笔试题28911,expect: False }
+#确认增加了管理员test11，删除了管理员deke1703 后的数据
+  - {username: deke1700, title: 2020/12/24普鲁斯特问卷-仅主观573,expect: True }
+  - {username: deke1703, title: 2020/12/24普鲁斯特问卷-仅主观573,expect: False }
+  - {username: test11, title: 2020/12/24普鲁斯特问卷-仅主观573,expect: True}
+  - {username: deke1705, title: 2020/12/24普鲁斯特问卷-仅主观573,expect: True }
+  - {username: deke1706, title: 2020/12/24普鲁斯特问卷-仅主观573,expect: False }
+
+test_get_man_total:
+#  - {username: deke1705,}
+#uat
+  - {username: test401,}
+
+test_survey_manages_post:
+  - {username: deke1705,expect: True,
+     json:
+       {
+         "title": "旅游调查學生、教師",
+         "content": "您好，我们是XXX，我们正在进行一项关于旅游的调查，想邀请您用几分钟时间帮忙填答这份问卷。本问卷实行匿名制，所有数据只用于统计分析， 请您放心填写。题目选项无对错之分，请您按自己的实际情况填写。谢谢您的帮助！",
+         "frequency": "ONLY_ONCE",
+         "startTime": "2021-03-16 16:48:00",
+         "planExpireTime": "2021-03-18 16:51:00",
+         "peopleOriented": "RESTRICTED",
+         "questionList": [
+           {
+             "sortOrder": 0,
+             "title": "请问您最近3个月是否有出游计划？",
+             "type": "MULTIPLE_CHOICE",
+             "isMustAnswer": true,
+             "isMultipleChoice": true,
+             "optionList": [
+               {
+                 "sortOrder": 0,
+                 "description": "該項需要符合史實",
+                 "title": "是"
+               },
+               {
+                 "sortOrder": 1,
+                 "description": "該項需要符合史實",
+                 "title": "否"
+               }
+             ]
+           },
+           {
+             "sortOrder": 1,
+             "title": "请问您计划什么时间旅游？",
+             "type": "MULTIPLE_CHOICE",
+             "isMustAnswer": false,
+             "isMultipleChoice": true,
+             "optionList": [
+               {
+                 "sortOrder": 0,
+                 "description": "該項需要符合史實",
+                 "title": "周末"
+               },
+               {
+                 "sortOrder": 1,
+                 "description": "該項需要符合史實",
+                 "title": "节假日"
+               },
+               {
+                 "sortOrder": 2,
+                 "description": "該項需要符合史實",
+                 "title": "平时"
+               },
+               {
+                 "sortOrder": 3,
+                 "description": "該項需要符合史實",
+                 "title": "其他",
+                 "isInput": true
+               }
+             ]
+           },
+           {
+             "sortOrder": 2,
+             "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+             "type": "SUBJECTIVE_QUESTIONS",
+             "isMustAnswer": false,
+             "optionList": [ ],
+             "wordLimit": 200
+           }
+         ],
+         "surveyManagers": {
+           "teacherIds": [
+               "80949",
+               "80953",
+               "80954"
+           ],
+           "techerNames": [
+               "德科1700",
+               "德科1704",
+               "德科1705"
+           ],
+           "teacherEnNames": [
+               "DEKE1700",
+               "DEKE1704",
+               "DEKE1705"
+           ]
+         },
+         "releasedRanges": {
+           "teacherIds": [
+               "80957"
+           ],
+           "techerNames": [
+               "德科1708"
+           ],
+           "teacherEnNames": [
+               "DEKE1708"
+           ],
+           "groupIds": [ ],
+           "groupNames": [ ],
+           "groupEnNames": [ ],
+           "studentIds": [
+               "9802",
+               "9877",
+               "9913"
+           ],
+           "studentNames": [
+               "秦华韫",
+               "杨金川",
+               "李贽吾"
+           ],
+           "studentEnNames": [
+               "QIN, HUAYUN",
+               "YANG, JINCHUAN",
+               "LI, ZHIWU"
+           ],
+           "facultyEnNames": [ ],
+           "facultyIds": [ ],
+           "facultyNames": [ ],
+           "majorCodes": [ ],
+           "majorNames": [ ],
+           "majorEnNames": [ ],
+           "programCodes": [ ],
+           "programNames": [ ],
+           "programEnNames": [ ],
+           "entryTerms": [ ],
+           "studentTypes": [ ],
+           "studentTypeNames": [ ],
+           "studentTypeEnNames": [ ],
+           "studentStatuses": [ ],
+           "studentStatusNames": [ ],
+           "dormTypes": [ ],
+           "releasedRanges": [
+               "PERSON"
+           ],
+           "studentReleasedRanges": [
+               "PERSON"
+           ]
+         }
+       }}
+
+test_survey_manages_post1:
+#不限人群
+  - { username: deke1704,expect: True,
+      json:
+        {
+          "title": "JAVA笔试题-不限人群",
+          "content": "您好！非常感谢您愿意用几分钟的时间，完成以下答卷。现在，我们就马上开始吧！",
+          "frequency": "ONLY_ONCE",
+          "startTime":,
+          "planExpireTime": ,
+          "peopleOriented": "UNLIMITED",
+          "questionList": [ {
+            "sortOrder": 0,
+            "title": "以下程序结果是？public class NULL {public static void haha(){System.out.println(haha);}public static void main(String[] args) {((NULL)null).haha();}}",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "haha"
+            }, {
+              "sortOrder": 1,
+              "title": "编译不通过"
+            }, {
+              "sortOrder": 2,
+              "title": "编译通过,执行报错"
+            }, {
+              "sortOrder": 3,
+              "title": "内存溢出"
+            } ]
+          }, {
+            "sortOrder": 1,
+            "title": "下面哪些不是Thread类的方法（ ）",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "子类的成员变量能与其父类的成员变量同名。"
+            }, {
+              "sortOrder": 1,
+              "title": "break语句在switch结构中是必须的."
+            }, {
+              "sortOrder": 2,
+              "title": "UDP是面向无连接的网络连接。"
+            }, {
+              "sortOrder": 3,
+              "title": "Hashtable是同步的，而HashMap不是同步的。所以不要求同步的时候，用HashMap的效率较高。"
+            } ]
+          }, {
+            "sortOrder": 2,
+            "title": "下列说法正确的是（ ）",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "代码得到编译，并输出“s=”"
+            }, {
+              "sortOrder": 1,
+              "title": "代码得到编译，并输出“s=null”"
+            }, {
+              "sortOrder": 2,
+              "title": "代码不能编译通过"
+            }, {
+              "sortOrder": 3,
+              "title": "代码得到编译，但捕获到 NullPointException异常"
+            } ]
+          }, {
+            "sortOrder": 3,
+            "title": "0.6332的数据类型是？（ ）",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "XML 文档必须有根元素"
+            }, {
+              "sortOrder": 1,
+              "title": "XML 的属性值须加引号"
+            }, {
+              "sortOrder": 2,
+              "title": "XML 标签对大小写不敏感"
+            }, {
+              "sortOrder": 3,
+              "title": "所有 XML 元素都须有关闭标签"
+            } ]
+          }, {
+            "sortOrder": 4,
+            "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "isMustAnswer": true,
+            "optionList": [ ],
+            "wordLimit": 200
+          } ],
+          "surveyManagers": {
+            "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726" ],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao" ]
+          },
+          "releasedRanges": {
+            "teacherIds": [ ],
+            "techerNames": [ ],
+            "teacherEnNames": [ ]
+          } }
+  }
+
+test_survey_manages_post2:
+# "taskId": "2026"  存在错误得邮箱
+  - { username: deke1704,expect: True,
+      file_path: D:\PycharmProjects\WM_R_PC\excel\outsider_import_template1.xlsx,
+      json:
+        {
+          "title": "JAVA笔试题-外部人員",
+          "content": "您好！非常感谢您愿意用几分钟的时间，完成以下答卷。现在，我们就马上开始吧！",
+          "frequency": "ONLY_ONCE",
+          "startTime":,
+          "planExpireTime": ,
+          "peopleOriented": "RESTRICTED",
+          "taskId": "2026",
+          "questionList": [ {
+            "sortOrder": 0,
+            "title": "以下程序结果是？public class NULL {public static void haha(){System.out.println(haha);}public static void main(String[] args) {((NULL)null).haha();}}",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "haha"
+            }, {
+              "sortOrder": 1,
+              "title": "编译不通过"
+            }, {
+              "sortOrder": 2,
+              "title": "编译通过,执行报错"
+            }, {
+              "sortOrder": 3,
+              "title": "内存溢出"
+            } ]
+          }, {
+            "sortOrder": 1,
+            "title": "下面哪些不是Thread类的方法（ ）",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "子类的成员变量能与其父类的成员变量同名。"
+            }, {
+              "sortOrder": 1,
+              "title": "break语句在switch结构中是必须的."
+            }, {
+              "sortOrder": 2,
+              "title": "UDP是面向无连接的网络连接。"
+            }, {
+              "sortOrder": 3,
+              "title": "Hashtable是同步的，而HashMap不是同步的。所以不要求同步的时候，用HashMap的效率较高。"
+            } ]
+          }, {
+            "sortOrder": 2,
+            "title": "下列说法正确的是（ ）",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "代码得到编译，并输出“s=”"
+            }, {
+              "sortOrder": 1,
+              "title": "代码得到编译，并输出“s=null”"
+            }, {
+              "sortOrder": 2,
+              "title": "代码不能编译通过"
+            }, {
+              "sortOrder": 3,
+              "title": "代码得到编译，但捕获到 NullPointException异常"
+            } ]
+          }, {
+            "sortOrder": 3,
+            "title": "0.6332的数据类型是？（ ）",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "XML 文档必须有根元素"
+            }, {
+              "sortOrder": 1,
+              "title": "XML 的属性值须加引号"
+            }, {
+              "sortOrder": 2,
+              "title": "XML 标签对大小写不敏感"
+            }, {
+              "sortOrder": 3,
+              "title": "所有 XML 元素都须有关闭标签"
+            } ]
+          }, {
+            "sortOrder": 4,
+            "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "isMustAnswer": true,
+            "optionList": [ ],
+            "wordLimit": 200
+          } ],
+          "surveyManagers": {
+            "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726" ,"75699"],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao" ,"juning001"],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao" ,"juning001"],
+          },
+          "releasedRanges": {
+            "teacherIds": ["80949", "80952", "80953", "80954" ],
+            "techerNames": ["德科1700", "德科1703", "德科1704", "德科1705"],
+            "teacherEnNames": ["DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ]
+          } }
+  }
+
+test_survey_manages_post12:
+# "taskId": "2138"  存在重复得邮箱，存在只有邮箱没有姓名的人员
+  - { username: deke1704,expect: True,
+      file_path: D:\PycharmProjects\WM_R_PC\excel\outsider_import_template2.xlsx,
+      json:
+        {
+          "title": "JAVA笔试题-外部人員",
+          "content": "您好！非常感谢您愿意用几分钟的时间，完成以下答卷。现在，我们就马上开始吧！",
+          "frequency": "ONLY_ONCE",
+          "startTime":,
+          "planExpireTime": ,
+          "peopleOriented": "RESTRICTED",
+          "taskId": "2138",
+          "questionList": [ {
+            "sortOrder": 0,
+            "title": "以下程序结果是？public class NULL {public static void haha(){System.out.println(haha);}public static void main(String[] args) {((NULL)null).haha();}}",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "haha",
+              "imageIds": [ 599 ]
+            }, {
+              "sortOrder": 1,
+              "title": "编译不通过",
+              "imageIds": [ 600 ]
+            }, {
+              "sortOrder": 2,
+              "title": "编译通过,执行报错",
+              "imageIds": [ 601 ]
+            }, {
+              "sortOrder": 3,
+              "title": "内存溢出",
+              "imageIds": [ 602 ]
+            } ]
+          }, {
+            "sortOrder": 1,
+            "title": "下面哪些不是Thread类的方法（ ）",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "子类的成员变量能与其父类的成员变量同名。"
+            }, {
+              "sortOrder": 1,
+              "title": "break语句在switch结构中是必须的."
+            }, {
+              "sortOrder": 2,
+              "title": "UDP是面向无连接的网络连接。"
+            }, {
+              "sortOrder": 3,
+              "title": "Hashtable是同步的，而HashMap不是同步的。所以不要求同步的时候，用HashMap的效率较高。"
+            } ]
+          }, {
+            "sortOrder": 2,
+            "title": "下列说法正确的是（ ）",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "代码得到编译，并输出“s=”"
+            }, {
+              "sortOrder": 1,
+              "title": "代码得到编译，并输出“s=null”"
+            }, {
+              "sortOrder": 2,
+              "title": "代码不能编译通过"
+            }, {
+              "sortOrder": 3,
+              "title": "代码得到编译，但捕获到 NullPointException异常"
+            } ]
+          }, {
+            "sortOrder": 3,
+            "title": "0.6332的数据类型是？（ ）",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "XML 文档必须有根元素"
+            }, {
+              "sortOrder": 1,
+              "title": "XML 的属性值须加引号"
+            }, {
+              "sortOrder": 2,
+              "title": "XML 标签对大小写不敏感"
+            }, {
+              "sortOrder": 3,
+              "title": "所有 XML 元素都须有关闭标签"
+            } ]
+          }, {
+            "sortOrder": 4,
+            "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "isMustAnswer": true,
+            "optionList": [ ],
+            "wordLimit": 200
+          } ],
+          "surveyManagers": {
+            "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726" ,"75699"],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao" ,"juning001"],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao" ,"juning001"],
+          },
+          "releasedRanges": {
+            "teacherIds": ["80949", "80952", "80953", "80954" ],
+            "techerNames": ["德科1700", "德科1703", "德科1704", "德科1705"],
+            "teacherEnNames": ["DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ]
+          } }
+  }
+
+test_survey_manages_post3:
+#学生教师、外部人員  taskid 2037 有juning郵箱
+  - { username: deke1704,expect: True,
+      json:
+        {
+          "title": "JAVA笔试题-学生教师",
+          "content": "您好！非常感谢您愿意用几分钟的时间，完成以下答卷。现在，我们就马上开始吧！",
+          "frequency": "EVERY_DAY",
+          "startTime":,
+          "planExpireTime": ,
+          "peopleOriented": "RESTRICTED",
+          "taskId": "2126",
+          "questionList": [ {
+            "sortOrder": 0,
+            "title": "以下程序结果是？public class NULL {public static void haha(){System.out.println(haha);}public static void main(String[] args) {((NULL)null).haha();}}",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "haha"
+            }, {
+              "sortOrder": 1,
+              "title": "编译不通过"
+            }, {
+              "sortOrder": 2,
+              "title": "编译通过,执行报错"
+            }, {
+              "sortOrder": 3,
+              "title": "内存溢出"
+            } ]
+          }, {
+            "sortOrder": 1,
+            "title": "下面哪些不是Thread类的方法（ ）",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "子类的成员变量能与其父类的成员变量同名。"
+            }, {
+              "sortOrder": 1,
+              "title": "break语句在switch结构中是必须的."
+            }, {
+              "sortOrder": 2,
+              "title": "UDP是面向无连接的网络连接。"
+            }, {
+              "sortOrder": 3,
+              "title": "Hashtable是同步的，而HashMap不是同步的。所以不要求同步的时候，用HashMap的效率较高。"
+            } ]
+          }, {
+            "sortOrder": 2,
+            "title": "下列说法正确的是（ ）",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "代码得到编译，并输出“s=”"
+            }, {
+              "sortOrder": 1,
+              "title": "代码得到编译，并输出“s=null”"
+            }, {
+              "sortOrder": 2,
+              "title": "代码不能编译通过"
+            }, {
+              "sortOrder": 3,
+              "title": "代码得到编译，但捕获到 NullPointException异常"
+            } ]
+          }, {
+            "sortOrder": 3,
+            "title": "0.6332的数据类型是？（ ）",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "XML 文档必须有根元素"
+            }, {
+              "sortOrder": 1,
+              "title": "XML 的属性值须加引号"
+            }, {
+              "sortOrder": 2,
+              "title": "XML 标签对大小写不敏感"
+            }, {
+              "sortOrder": 3,
+              "title": "所有 XML 元素都须有关闭标签"
+            } ]
+          }, {
+            "sortOrder": 4,
+            "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "isMustAnswer": true,
+            "optionList": [ ],
+            "wordLimit": 200
+          },{
+            "sortOrder": 5,
+            "title": "你会把生活中的情绪带到工作中吗？",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "isMustAnswer": true,
+            "optionList": [ ],
+            "wordLimit": 200
+          }],
+          "surveyManagers": {
+            "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726" ,"75699"],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao" ,"juning001"],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao" ,"juning001"],
+          },
+          "releasedRanges": {
+            "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726" ,"75699"],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao" ,"juning001"],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao" ,"juning001"],
+            "studentIds": [ "9727", "9760", "9802", "9877", "9913", "9977" ],
+            "studentNames": [ "邱思嘉", "张欣怡", "秦华韫", "杨金川", "李贽吾", "陈序" ],
+            "studentEnNames": [ "QIU, SIJIA", "ZHANG, XINYI", "QIN, HUAYUN", "YANG, JINCHUAN", "LI, ZHIWU", "CHEN, XU" ],
+          } }
+  }
+
+test_survey_manages_post4:
+# 僅主觀題 非必填
+  - { username: deke1704,expect: True,
+      json:
+        {
+          "title": "普鲁斯特问卷（仅主观非必填）",
+          "content": "您好！非常感谢您愿意用几分钟的时间，完成以下答卷。现在，我们就马上开始吧！",
+          "frequency": "EVERY_DAY",
+          "startTime":,
+          "planExpireTime": ,
+          "peopleOriented": "RESTRICTED",
+          "questionList": [ {
+            "sortOrder": 0,
+            "title": "你认为最完美的快乐是怎样的？",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 1,
+            "title": "你最希望拥有那种才华？",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 2,
+            "title": "你最恐惧的是什么？",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 3,
+            "title": "你目前的心境怎样？",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 4,
+            "title": "还在世的人中你最佩服的是谁？",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          } ],
+          "surveyManagers": {
+            "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+          },
+          "releasedRanges": {
+            "teacherIds": [ "80949", "80952", "80953", "80954" ],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ]
+          }
+        }
+  }
+
+test_survey_manages_post5:
+#仅选择题，必填，单选
+  - { username: deke1704,expect: True,
+      json:
+        {
+          "title": "Explain how...（仅选择必填）",
+          "content": "The code coverage testing tool runs parallel while performing testing on the actual product.",
+          "frequency": "EVERY_DAY",
+          "startTime": ,
+          "planExpireTime": ,
+          "peopleOriented": "RESTRICTED",
+          "questionList": [ {
+            "sortOrder": 0,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Latent defect"
+            }, {
+              "sortOrder": 1,
+              "title": "Masked defect"
+            } ]
+          }, {
+            "sortOrder": 1,
+            "title": "Mention what is bottom up testing?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Statement Coverage: It verifies that each line of source code has been executed and tested"
+            }, {
+              "sortOrder": 1,
+              "title": "Decision Coverage: It ensures that every decision in the source code is executed and tested"
+            }, {
+              "sortOrder": 2,
+              "title": "Path Coverage: It ensures that every possible route through a given part of code is executed and tested"
+            } ]
+          }, {
+            "sortOrder": 2,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Project Name",
+              "imageIds": [ 903 ]
+            }, {
+              "sortOrder": 1,
+              "title": "Module Name",
+              "imageIds": [ 904 ]
+            }, {
+              "sortOrder": 2,
+              "title": "Defect detected on",
+              "imageIds": [ 905 ]
+            }, {
+              "sortOrder": 3,
+              "title": "Defect detected by",
+              "imageIds": [ 906 ]
+            }, {
+              "sortOrder": 4,
+              "title": "Defect ID and Name",
+              "imageIds": [ 907 ]
+            }, {
+              "sortOrder": 5,
+              "title": "Snapshot of the defect",
+              "imageIds": [ 908 ]
+            }, {
+              "sortOrder": 6,
+              "title": "Priority and Severity status",
+              "imageIds": [ 909 ]
+            }, {
+              "sortOrder": 7,
+              "title": "Defect resolved by",
+              "imageIds": [ 910 ]
+            }, {
+              "sortOrder": 8,
+              "title": "Defect resolved on"
+            } ]
+          }, {
+            "sortOrder": 3,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Central/Project test plan: It is the main test plan that outlines the complete test strategy of the project. This plan is used till the end of the software development lifecycle"
+            }, {
+              "sortOrder": 1,
+              "title": "Acceptance test plan: This document begins during the requirement phase and is completed at final delivery"
+            }, {
+              "sortOrder": 2,
+              "title": "System test plan: This plan starts during the design plan and proceeds until the end of the project"
+            }, {
+              "sortOrder": 3,
+              "title": "Integration and Unit test plan: Both these test plans start during the execution phase and last until the final delivery"
+            } ]
+          }, {
+            "sortOrder": 4,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Tests that need to be run for every build of the application"
+            }, {
+              "sortOrder": 1,
+              "title": "Tests that use multiple data for the same set of actions"
+            }, {
+              "sortOrder": 2,
+              "title": "Identical tests that needs to be executed using different browsers"
+            }, {
+              "sortOrder": 3,
+              "title": "Mission critical pages"
+            }, {
+              "sortOrder": 4,
+              "title": "Transaction with pages that do not change in short time"
+            } ]
+          }, {
+            "sortOrder": 5,
+            "title": "Explain in a testing project what testing activities would you automate?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Tests that need to be run for every build of the application"
+            }, {
+              "sortOrder": 1,
+              "title": "Tests that use multiple data for the same set of actions"
+            }, {
+              "sortOrder": 2,
+              "title": "Identical tests that needs to be executed using different browsers"
+            }, {
+              "sortOrder": 3,
+              "title": "Mission critical pages"
+            }, {
+              "sortOrder": 4,
+              "title": "Transaction with pages that do not change in short time"
+            } ]
+          }, {
+            "sortOrder": 6,
+            "title": "Mention what is the purpose behind doing end-to-end testing?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "To validate the software requirements and integration with external interfaces"
+            }, {
+              "sortOrder": 1,
+              "title": "Testing application in real world environment scenario"
+            }, {
+              "sortOrder": 2,
+              "title": "Testing of interaction between application and database"
+            } ]
+          }, {
+            "sortOrder": 7,
+            "title": "What are the different Methodologies in Agile Development Model?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Extreme Programming (XP)"
+            }, {
+              "sortOrder": 1,
+              "title": "Scrum"
+            }, {
+              "sortOrder": 2,
+              "title": "Dynamic Systems Development Model (DSDM)"
+            }, {
+              "sortOrder": 3,
+              "title": "Feature-Driven Development"
+            }, {
+              "sortOrder": 4,
+              "title": "Lean Software Development"
+            }, {
+              "sortOrder": 5,
+              "title": "Agile Unified Process"
+            }, {
+              "sortOrder": 6,
+              "title": "Crystal"
+            } ]
+          }, {
+            "sortOrder": 8,
+            "title": "Which of the following are valid objectives for incident reports?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Provide developers and other parties with feedback about the problem to enable identification, isolation and correction as necessary"
+            }, {
+              "sortOrder": 1,
+              "title": "Scrum"
+            }, {
+              "sortOrder": 2,
+              "title": "Dynamic Systems Development Model (DSDM)"
+            }, {
+              "sortOrder": 3,
+              "title": "Provide a vehicle for assessing tester competence"
+            }, {
+              "sortOrder": 4,
+              "title": "Provide testers with a means of tracking the quality of the system under test"
+            } ]
+          }, {
+            "sortOrder": 9,
+            "title": "Consider the following techniques. Which are static and which are dynamic techniques?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Equivalence Partitioning"
+            }, {
+              "sortOrder": 1,
+              "title": "Use Case Testing"
+            }, {
+              "sortOrder": 2,
+              "title": "Data Flow Analysis"
+            }, {
+              "sortOrder": 3,
+              "title": "Exploratory Testing"
+            }, {
+              "sortOrder": 4,
+              "title": "Decision Testing"
+            }, {
+              "sortOrder": 5,
+              "title": "Inspections"
+            } ]
+          } ],
+          "surveyManagers": {
+            "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+          },
+          "releasedRanges": {
+            "teacherIds": [ "80949", "80952", "80953", "80954" , "75677", "75726", "75699"],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705" , "gray", "tao", "juning001"],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" , "gray", "tao", "juning001"]
+          }
+        }
+  }
+
+test_survey_manages_post6:
+#仅选择题，必填，单选+ 1道多选
+  - { username: deke1704,expect: True,
+      json:
+        {
+          "title": "Explain how...（仅选择必填多选1）",
+          "content": "The code coverage testing tool runs parallel while performing testing on the actual product.",
+          "frequency": "EVERY_DAY",
+          "startTime": ,
+          "planExpireTime": ,
+          "peopleOriented": "RESTRICTED",
+          "questionList": [ {
+            "sortOrder": 0,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Latent defect"
+            }, {
+              "sortOrder": 1,
+              "title": "Masked defect"
+            } ]
+          }, {
+            "sortOrder": 1,
+            "title": "Mention what is bottom up testing?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Statement Coverage: It verifies that each line of source code has been executed and tested"
+            }, {
+              "sortOrder": 1,
+              "title": "Decision Coverage: It ensures that every decision in the source code is executed and tested"
+            }, {
+              "sortOrder": 2,
+              "title": "Path Coverage: It ensures that every possible route through a given part of code is executed and tested"
+            } ]
+          }, {
+            "sortOrder": 2,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Project Name",
+              "imageIds": [ 903 ]
+            }, {
+              "sortOrder": 1,
+              "title": "Module Name",
+              "imageIds": [ 904 ]
+            }, {
+              "sortOrder": 2,
+              "title": "Defect detected on",
+              "imageIds": [ 905 ]
+            }, {
+              "sortOrder": 3,
+              "title": "Defect detected by",
+              "imageIds": [ 906 ]
+            }, {
+              "sortOrder": 4,
+              "title": "Defect ID and Name",
+              "imageIds": [ 907 ]
+            }, {
+              "sortOrder": 5,
+              "title": "Snapshot of the defect",
+              "imageIds": [ 908 ]
+            }, {
+              "sortOrder": 6,
+              "title": "Priority and Severity status",
+              "imageIds": [ 909 ]
+            }, {
+              "sortOrder": 7,
+              "title": "Defect resolved by",
+              "imageIds": [ 910 ]
+            }, {
+              "sortOrder": 8,
+              "title": "Defect resolved on"
+            } ]
+          }, {
+            "sortOrder": 3,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Central/Project test plan: It is the main test plan that outlines the complete test strategy of the project. This plan is used till the end of the software development lifecycle"
+            }, {
+              "sortOrder": 1,
+              "title": "Acceptance test plan: This document begins during the requirement phase and is completed at final delivery"
+            }, {
+              "sortOrder": 2,
+              "title": "System test plan: This plan starts during the design plan and proceeds until the end of the project"
+            }, {
+              "sortOrder": 3,
+              "title": "Integration and Unit test plan: Both these test plans start during the execution phase and last until the final delivery"
+            } ]
+          }, {
+            "sortOrder": 4,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Tests that need to be run for every build of the application"
+            }, {
+              "sortOrder": 1,
+              "title": "Tests that use multiple data for the same set of actions"
+            }, {
+              "sortOrder": 2,
+              "title": "Identical tests that needs to be executed using different browsers"
+            }, {
+              "sortOrder": 3,
+              "title": "Mission critical pages"
+            }, {
+              "sortOrder": 4,
+              "title": "Transaction with pages that do not change in short time"
+            } ]
+          }, {
+            "sortOrder": 5,
+            "title": "Explain in a testing project what testing activities would you automate?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Tests that need to be run for every build of the application"
+            }, {
+              "sortOrder": 1,
+              "title": "Tests that use multiple data for the same set of actions"
+            }, {
+              "sortOrder": 2,
+              "title": "Identical tests that needs to be executed using different browsers"
+            }, {
+              "sortOrder": 3,
+              "title": "Mission critical pages"
+            }, {
+              "sortOrder": 4,
+              "title": "Transaction with pages that do not change in short time"
+            } ]
+          }, {
+            "sortOrder": 6,
+            "title": "Mention what is the purpose behind doing end-to-end testing?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "To validate the software requirements and integration with external interfaces"
+            }, {
+              "sortOrder": 1,
+              "title": "Testing application in real world environment scenario"
+            }, {
+              "sortOrder": 2,
+              "title": "Testing of interaction between application and database"
+            } ]
+          }, {
+            "sortOrder": 7,
+            "title": "What are the different Methodologies in Agile Development Model?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Extreme Programming (XP)"
+            }, {
+              "sortOrder": 1,
+              "title": "Scrum"
+            }, {
+              "sortOrder": 2,
+              "title": "Dynamic Systems Development Model (DSDM)"
+            }, {
+              "sortOrder": 3,
+              "title": "Feature-Driven Development"
+            }, {
+              "sortOrder": 4,
+              "title": "Lean Software Development"
+            }, {
+              "sortOrder": 5,
+              "title": "Agile Unified Process"
+            }, {
+              "sortOrder": 6,
+              "title": "Crystal"
+            } ]
+          }, {
+            "sortOrder": 8,
+            "title": "Which of the following are valid objectives for incident reports?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Provide developers and other parties with feedback about the problem to enable identification, isolation and correction as necessary"
+            }, {
+              "sortOrder": 1,
+              "title": "Scrum"
+            }, {
+              "sortOrder": 2,
+              "title": "Dynamic Systems Development Model (DSDM)"
+            }, {
+              "sortOrder": 3,
+              "title": "Provide a vehicle for assessing tester competence"
+            }, {
+              "sortOrder": 4,
+              "title": "Provide testers with a means of tracking the quality of the system under test"
+            } ]
+          }, {
+            "sortOrder": 9,
+            "title": "Consider the following techniques. Which are static and which are dynamic techniques?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": true,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Equivalence Partitioning"
+            }, {
+              "sortOrder": 1,
+              "title": "Use Case Testing"
+            }, {
+              "sortOrder": 2,
+              "title": "Data Flow Analysis"
+            }, {
+              "sortOrder": 3,
+              "title": "Exploratory Testing"
+            }, {
+              "sortOrder": 4,
+              "title": "Decision Testing"
+            }, {
+              "sortOrder": 5,
+              "title": "Inspections"
+            } ]
+          } ],
+          "surveyManagers": {
+            "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+          },
+          "releasedRanges": {
+            "teacherIds": [ "80949", "80952", "80953", "80954" , "75677", "75726", "75699"],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705" , "gray", "tao", "juning001"],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" , "gray", "tao", "juning001"]
+          }
+        }
+  }
+
+test_survey_manages_post7:
+#仅选择题，非必填，单选
+  - { username: deke1704,expect: True,
+      json:
+#        Explain how...
+        {
+          "title": "旅游调查（仅选择非必填）",
+          "content": "The code coverage testing tool runs parallel while performing testing on the actual product.",
+          "frequency": "EVERY_DAY",
+          "startTime": ,
+          "planExpireTime": ,
+          "peopleOriented": "RESTRICTED",
+          "questionList": [ {
+            "sortOrder": 0,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Latent defect"
+            }, {
+              "sortOrder": 1,
+              "title": "Masked defect"
+            } ]
+          }, {
+            "sortOrder": 1,
+            "title": "Mention what is bottom up testing?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Statement Coverage: It verifies that each line of source code has been executed and tested"
+            }, {
+              "sortOrder": 1,
+              "title": "Decision Coverage: It ensures that every decision in the source code is executed and tested"
+            }, {
+              "sortOrder": 2,
+              "title": "Path Coverage: It ensures that every possible route through a given part of code is executed and tested"
+            } ]
+          }, {
+            "sortOrder": 2,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Project Name",
+              "imageIds": [ 903 ]
+            }, {
+              "sortOrder": 1,
+              "title": "Module Name",
+              "imageIds": [ 904 ]
+            }, {
+              "sortOrder": 2,
+              "title": "Defect detected on",
+              "imageIds": [ 905 ]
+            }, {
+              "sortOrder": 3,
+              "title": "Defect detected by",
+              "imageIds": [ 906 ]
+            }, {
+              "sortOrder": 4,
+              "title": "Defect ID and Name",
+              "imageIds": [ 907 ]
+            }, {
+              "sortOrder": 5,
+              "title": "Snapshot of the defect",
+              "imageIds": [ 908 ]
+            }, {
+              "sortOrder": 6,
+              "title": "Priority and Severity status",
+              "imageIds": [ 909 ]
+            }, {
+              "sortOrder": 7,
+              "title": "Defect resolved by",
+              "imageIds": [ 910 ]
+            }, {
+              "sortOrder": 8,
+              "title": "Defect resolved on"
+            } ]
+          }, {
+            "sortOrder": 3,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Central/Project test plan: It is the main test plan that outlines the complete test strategy of the project. This plan is used till the end of the software development lifecycle"
+            }, {
+              "sortOrder": 1,
+              "title": "Acceptance test plan: This document begins during the requirement phase and is completed at final delivery"
+            }, {
+              "sortOrder": 2,
+              "title": "System test plan: This plan starts during the design plan and proceeds until the end of the project"
+            }, {
+              "sortOrder": 3,
+              "title": "Integration and Unit test plan: Both these test plans start during the execution phase and last until the final delivery"
+            } ]
+          }, {
+            "sortOrder": 4,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Tests that need to be run for every build of the application"
+            }, {
+              "sortOrder": 1,
+              "title": "Tests that use multiple data for the same set of actions"
+            }, {
+              "sortOrder": 2,
+              "title": "Identical tests that needs to be executed using different browsers"
+            }, {
+              "sortOrder": 3,
+              "title": "Mission critical pages"
+            }, {
+              "sortOrder": 4,
+              "title": "Transaction with pages that do not change in short time"
+            } ]
+          }, {
+            "sortOrder": 5,
+            "title": "Explain in a testing project what testing activities would you automate?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Tests that need to be run for every build of the application"
+            }, {
+              "sortOrder": 1,
+              "title": "Tests that use multiple data for the same set of actions"
+            }, {
+              "sortOrder": 2,
+              "title": "Identical tests that needs to be executed using different browsers"
+            }, {
+              "sortOrder": 3,
+              "title": "Mission critical pages"
+            }, {
+              "sortOrder": 4,
+              "title": "Transaction with pages that do not change in short time"
+            } ]
+          }, {
+            "sortOrder": 6,
+            "title": "Mention what is the purpose behind doing end-to-end testing?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "To validate the software requirements and integration with external interfaces"
+            }, {
+              "sortOrder": 1,
+              "title": "Testing application in real world environment scenario"
+            }, {
+              "sortOrder": 2,
+              "title": "Testing of interaction between application and database"
+            } ]
+          }, {
+            "sortOrder": 7,
+            "title": "What are the different Methodologies in Agile Development Model?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Extreme Programming (XP)"
+            }, {
+              "sortOrder": 1,
+              "title": "Scrum"
+            }, {
+              "sortOrder": 2,
+              "title": "Dynamic Systems Development Model (DSDM)"
+            }, {
+              "sortOrder": 3,
+              "title": "Feature-Driven Development"
+            }, {
+              "sortOrder": 4,
+              "title": "Lean Software Development"
+            }, {
+              "sortOrder": 5,
+              "title": "Agile Unified Process"
+            }, {
+              "sortOrder": 6,
+              "title": "Crystal"
+            } ]
+          }, {
+            "sortOrder": 8,
+            "title": "Which of the following are valid objectives for incident reports?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Provide developers and other parties with feedback about the problem to enable identification, isolation and correction as necessary"
+            }, {
+              "sortOrder": 1,
+              "title": "Scrum"
+            }, {
+              "sortOrder": 2,
+              "title": "Dynamic Systems Development Model (DSDM)"
+            }, {
+              "sortOrder": 3,
+              "title": "Provide a vehicle for assessing tester competence"
+            }, {
+              "sortOrder": 4,
+              "title": "Provide testers with a means of tracking the quality of the system under test"
+            } ]
+          }, {
+            "sortOrder": 9,
+            "title": "Consider the following techniques. Which are static and which are dynamic techniques?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": false,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Equivalence Partitioning"
+            }, {
+              "sortOrder": 1,
+              "title": "Use Case Testing"
+            }, {
+              "sortOrder": 2,
+              "title": "Data Flow Analysis"
+            }, {
+              "sortOrder": 3,
+              "title": "Exploratory Testing"
+            }, {
+              "sortOrder": 4,
+              "title": "Decision Testing"
+            }, {
+              "sortOrder": 5,
+              "title": "Inspections"
+            } ]
+          } ],
+          "surveyManagers": {
+            "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+          },
+          "releasedRanges": {
+            "teacherIds": [ "80949", "80952", "80953", "80954" , "75677", "75726", "75699"],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705" , "gray", "tao", "juning001"],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" , "gray", "tao", "juning001"]
+          }
+        }
+  }
+
+test_survey_manages_post8:
+#仅选择题，非必填，多选
+  - { username: test11,expect: True,
+      json:
+        {
+          "title": "旅游调查（仅选择非必填全多选）",
+          "content": "The code coverage testing tool runs parallel while performing testing on the actual product.",
+          "frequency": "EVERY_DAY",
+          "startTime": ,
+          "planExpireTime": ,
+          "peopleOriented": "RESTRICTED",
+          "questionList": [ {
+            "sortOrder": 0,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Latent defect"
+            }, {
+              "sortOrder": 1,
+              "title": "Masked defect"
+            } ]
+          }, {
+            "sortOrder": 1,
+            "title": "Mention what is bottom up testing?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Statement Coverage: It verifies that each line of source code has been executed and tested"
+            }, {
+              "sortOrder": 1,
+              "title": "Decision Coverage: It ensures that every decision in the source code is executed and tested"
+            }, {
+              "sortOrder": 2,
+              "title": "Path Coverage: It ensures that every possible route through a given part of code is executed and tested"
+            } ]
+          }, {
+            "sortOrder": 2,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Project Name",
+              "imageIds": [ 903 ]
+            }, {
+              "sortOrder": 1,
+              "title": "Module Name",
+              "imageIds": [ 904 ]
+            }, {
+              "sortOrder": 2,
+              "title": "Defect detected on",
+              "imageIds": [ 905 ]
+            }, {
+              "sortOrder": 3,
+              "title": "Defect detected by",
+              "imageIds": [ 906 ]
+            }, {
+              "sortOrder": 4,
+              "title": "Defect ID and Name",
+              "imageIds": [ 907 ]
+            }, {
+              "sortOrder": 5,
+              "title": "Snapshot of the defect",
+              "imageIds": [ 908 ]
+            }, {
+              "sortOrder": 6,
+              "title": "Priority and Severity status",
+              "imageIds": [ 909 ]
+            }, {
+              "sortOrder": 7,
+              "title": "Defect resolved by",
+              "imageIds": [ 910 ]
+            }, {
+              "sortOrder": 8,
+              "title": "Defect resolved on"
+            } ]
+          }, {
+            "sortOrder": 3,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Central/Project test plan: It is the main test plan that outlines the complete test strategy of the project. This plan is used till the end of the software development lifecycle"
+            }, {
+              "sortOrder": 1,
+              "title": "Acceptance test plan: This document begins during the requirement phase and is completed at final delivery"
+            }, {
+              "sortOrder": 2,
+              "title": "System test plan: This plan starts during the design plan and proceeds until the end of the project"
+            }, {
+              "sortOrder": 3,
+              "title": "Integration and Unit test plan: Both these test plans start during the execution phase and last until the final delivery"
+            } ]
+          }, {
+            "sortOrder": 4,
+            "title": "Explain how to test documents in a project that span across the software development lifecycle?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Tests that need to be run for every build of the application"
+            }, {
+              "sortOrder": 1,
+              "title": "Tests that use multiple data for the same set of actions"
+            }, {
+              "sortOrder": 2,
+              "title": "Identical tests that needs to be executed using different browsers"
+            }, {
+              "sortOrder": 3,
+              "title": "Mission critical pages"
+            }, {
+              "sortOrder": 4,
+              "title": "Transaction with pages that do not change in short time"
+            } ]
+          }, {
+            "sortOrder": 5,
+            "title": "Explain in a testing project what testing activities would you automate?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Tests that need to be run for every build of the application"
+            }, {
+              "sortOrder": 1,
+              "title": "Tests that use multiple data for the same set of actions"
+            }, {
+              "sortOrder": 2,
+              "title": "Identical tests that needs to be executed using different browsers"
+            }, {
+              "sortOrder": 3,
+              "title": "Mission critical pages"
+            }, {
+              "sortOrder": 4,
+              "title": "Transaction with pages that do not change in short time"
+            } ]
+          }, {
+            "sortOrder": 6,
+            "title": "Mention what is the purpose behind doing end-to-end testing?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "To validate the software requirements and integration with external interfaces"
+            }, {
+              "sortOrder": 1,
+              "title": "Testing application in real world environment scenario"
+            }, {
+              "sortOrder": 2,
+              "title": "Testing of interaction between application and database"
+            } ]
+          }, {
+            "sortOrder": 7,
+            "title": "What are the different Methodologies in Agile Development Model?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Extreme Programming (XP)"
+            }, {
+              "sortOrder": 1,
+              "title": "Scrum"
+            }, {
+              "sortOrder": 2,
+              "title": "Dynamic Systems Development Model (DSDM)"
+            }, {
+              "sortOrder": 3,
+              "title": "Feature-Driven Development"
+            }, {
+              "sortOrder": 4,
+              "title": "Lean Software Development"
+            }, {
+              "sortOrder": 5,
+              "title": "Agile Unified Process"
+            }, {
+              "sortOrder": 6,
+              "title": "Crystal"
+            } ]
+          }, {
+            "sortOrder": 8,
+            "title": "Which of the following are valid objectives for incident reports?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Provide developers and other parties with feedback about the problem to enable identification, isolation and correction as necessary"
+            }, {
+              "sortOrder": 1,
+              "title": "Scrum"
+            }, {
+              "sortOrder": 2,
+              "title": "Dynamic Systems Development Model (DSDM)"
+            }, {
+              "sortOrder": 3,
+              "title": "Provide a vehicle for assessing tester competence"
+            }, {
+              "sortOrder": 4,
+              "title": "Provide testers with a means of tracking the quality of the system under test"
+            } ]
+          }, {
+            "sortOrder": 9,
+            "title": "Consider the following techniques. Which are static and which are dynamic techniques?",
+            "type": "MULTIPLE_CHOICE",
+            "isMustAnswer": false,
+            "isMultipleChoice": true,
+            "optionList": [ {
+              "sortOrder": 0,
+              "title": "Equivalence Partitioning"
+            }, {
+              "sortOrder": 1,
+              "title": "Use Case Testing"
+            }, {
+              "sortOrder": 2,
+              "title": "Data Flow Analysis"
+            }, {
+              "sortOrder": 3,
+              "title": "Exploratory Testing"
+            }, {
+              "sortOrder": 4,
+              "title": "Decision Testing"
+            }, {
+              "sortOrder": 5,
+              "title": "Inspections"
+            } ]
+          } ],
+          "surveyManagers": {
+            "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+          },
+          "releasedRanges": {
+            "teacherIds": [ "80949", "80952", "80953", "80954" , "75677", "75726", "75699"],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705" , "gray", "tao", "juning001"],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" , "gray", "tao", "juning001"]
+          }
+        }
+  }
+
+test_survey_manages_post9:
+# 僅主觀題  必填 無字數限制
+  - { username: test11,expect: True,
+      json:
+        {
+          "title": "普鲁斯特问卷（仅主观必填-無字數限制）",
+          "content": "您好！非常感谢您愿意用几分钟的时间，完成以下答卷。现在，我们就马上开始吧！",
+          "frequency": "EVERY_DAY",
+          "startTime":,
+          "planExpireTime": ,
+          "peopleOriented": "RESTRICTED",
+          "questionList": [ {
+            "sortOrder": 0,
+            "isMustAnswer": true,
+            "title": "你认为最完美的快乐是怎样的？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 1,
+            "isMustAnswer": true,
+            "title": "你最希望拥有那种才华？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 2,
+            "isMustAnswer": true,
+            "title": "你最恐惧的是什么？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 3,
+            "isMustAnswer": true,
+            "title": "你目前的心境怎样？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 4,
+            "isMustAnswer": true,
+            "title": "还在世的人中你最佩服的是谁？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          } ],
+          "surveyManagers": {
+            "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+          },
+          "releasedRanges": {
+            "teacherIds": [ "80949", "80952", "80953", "80954" ],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ]
+          }
+        }
+  }
+
+test_survey_manages_post10:
+# 僅主觀題  非必填 最後一題有字數限制
+  - { username: test11,expect: True,
+      json:
+        {
+          "title": "普鲁斯特问卷（仅主观非必填-有字數限制）",
+          "content": "您好！非常感谢您愿意用几分钟的时间，完成以下答卷。现在，我们就马上开始吧！",
+          "frequency": "EVERY_DAY",
+          "startTime":,
+          "planExpireTime": ,
+          "peopleOriented": "RESTRICTED",
+          "questionList": [ {
+            "sortOrder": 0,
+            "isMustAnswer": false,
+            "title": "你认为最完美的快乐是怎样的？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 1,
+            "isMustAnswer": false,
+            "title": "你最希望拥有那种才华？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 2,
+            "isMustAnswer": false,
+            "title": "你最恐惧的是什么？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 3,
+            "isMustAnswer": false,
+            "title": "你目前的心境怎样？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 4,
+            "isMustAnswer": false,
+            "title": "还在世的人中你最佩服的是谁？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 50
+          } ],
+          "surveyManagers": {
+            "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+          },
+          "releasedRanges": {
+            "teacherIds": [ "80949", "80952", "80953", "80954" ],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ]
+          }
+        }
+  }
+
+
+test_survey_manages_post11:
+# 僅主觀題  必填 最後一題字數限制
+  - { username: test11,expect: True,
+      json:
+        {
+          "title": "普鲁斯特问卷（仅主观必填-有字數限制）",
+          "content": "您好！非常感谢您愿意用几分钟的时间，完成以下答卷。现在，我们就马上开始吧！",
+          "frequency": "EVERY_DAY",
+          "startTime":,
+          "planExpireTime": ,
+          "peopleOriented": "RESTRICTED",
+          "questionList": [ {
+            "sortOrder": 0,
+            "isMustAnswer": true,
+            "title": "你认为最完美的快乐是怎样的？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 1,
+            "isMustAnswer": true,
+            "title": "你最希望拥有那种才华？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 2,
+            "isMustAnswer": true,
+            "title": "你最恐惧的是什么？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 3,
+            "isMustAnswer": true,
+            "title": "你目前的心境怎样？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 200
+          }, {
+            "sortOrder": 4,
+            "isMustAnswer": true,
+            "title": "还在世的人中你最佩服的是谁？",
+            "tips" : "舉例證明",
+            "type": "SUBJECTIVE_QUESTIONS",
+            "optionList": [ ],
+            "wordLimit": 50
+          } ],
+          "surveyManagers": {
+            "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+          },
+          "releasedRanges": {
+            "teacherIds": [ "80949", "80952", "80953", "80954" ],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ]
+          }
+        }
+  }
+
+test_survey_manages_post13:
+#"taskId": "2067" 對應外部人員文件5
+ - { username: deke1704,expect: True,
+     json:
+       {
+         "title": "問卷統計測試",
+         "content": "您好，我们是XXX，我们正在进行一项关于旅游的调查，想邀请您用几分钟时间帮忙填答这份问卷。本问卷实行匿名制，所有数据只用于统计分析， 请您放心填写。题目选项无对错之分，请您按自己的实际情况填写。谢谢您的帮助！",
+         "frequency": "ONLY_ONCE",
+         "startTime":,
+         "planExpireTime": ,
+         "peopleOriented": "RESTRICTED",
+         "taskId": "2067",
+         "questionList": [ {
+           "sortOrder": 0,
+           "title": "struts框架中，使用以下（ ）标签可以显示数据验证错误信息。",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": false,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "html:error/",
+             "imageIds": [ 1521 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "html:errors/",
+             "imageIds": [ 1522 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "logic:error/",
+             "imageIds": [ 1523 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "logic:errors/",
+             "imageIds": [ 1524 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 1,
+           "title": "请问您计划什么时间旅游？",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": true,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "周末",
+             "imageIds": [ 1525 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "节假日",
+             "imageIds": [ 1526 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "平时",
+             "imageIds": [ 1527 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "其他",
+             "imageIds": [ 1528 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 2,
+           "title": "下面哪个流类属于面向字符的输入流？（ ）",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": false,
+           "isMultipleChoice": True,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "BufferedWrite",
+             "imageIds": [ 1529 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "FileInputStream",
+             "imageIds": [ 1530 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "ObjectInputStream",
+             "imageIds": [ 1531 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "InputStreamReader",
+             "imageIds": [ 1532 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 3,
+           "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+           "type": "SUBJECTIVE_QUESTIONS",
+           "isMustAnswer": false,
+           "optionList": [ ],
+           "tips": "舉例説明",
+           "wordLimit": 500
+         } ],
+         "surveyManagers": {
+           "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+         },
+         "releasedRanges": {
+           "teacherIds": [ "80949", "80952", "80953", "80954" ,"2201","75612","75613"],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705","mai1","mai2","mai3" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ,"邢","mai2","mai3"],
+           "groupIds": [ ],
+           "groupNames": [ ],
+           "groupEnNames": [ ]
+         }
+       }
+ }
+
+test_survey_manages_post14:
+#測試統計，全部教職工
+ - { username: deke1704,expect: True,
+     json:
+       {
+         "title": "問卷統計測試",
+         "content": "您好，我们是XXX，我们正在进行一项关于旅游的调查，想邀请您用几分钟时间帮忙填答这份问卷。本问卷实行匿名制，所有数据只用于统计分析， 请您放心填写。题目选项无对错之分，请您按自己的实际情况填写。谢谢您的帮助！",
+         "frequency": "ONLY_ONCE",
+         "startTime":,
+         "planExpireTime": "2021-01-04 19:00:00",
+         "peopleOriented": "RESTRICTED",
+         "questionList": [ {
+           "sortOrder": 0,
+           "title": "struts框架中，使用以下（ ）标签可以显示数据验证错误信息。",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": false,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "html:error/",
+             "imageIds": [ 1521 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "html:errors/",
+             "imageIds": [ 1522 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "logic:error/",
+             "imageIds": [ 1523 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "logic:errors/",
+             "imageIds": [ 1524 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 1,
+           "title": "请问您计划什么时间旅游？",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": true,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "周末",
+             "imageIds": [ 1525 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "节假日",
+             "imageIds": [ 1526 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "平时",
+             "imageIds": [ 1527 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "其他",
+             "imageIds": [ 1528 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 2,
+           "title": "下面哪个流类属于面向字符的输入流？（ ）",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": false,
+           "isMultipleChoice": True,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "BufferedWrite",
+             "imageIds": [ 1529 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "FileInputStream",
+             "imageIds": [ 1530 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "ObjectInputStream",
+             "imageIds": [ 1531 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "InputStreamReader",
+             "imageIds": [ 1532 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 3,
+           "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+           "type": "SUBJECTIVE_QUESTIONS",
+           "isMustAnswer": false,
+           "optionList": [ ],
+           "tips": "舉例説明",
+           "wordLimit": 500
+         } ],
+         "surveyManagers": {
+           "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+         },
+         "releasedRanges": {
+           "teacherIds": [ "80949", "80952", "80953", "80954" ,"2201","75612","75613","61650","61651","61657"],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705","mai1","mai2","mai3","test11","測試員12","test15" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ,"邢","mai2","mai3","test11","test12","test15"],
+           "groupIds": [ ],
+           "groupNames": [ ],
+           "groupEnNames": [ ]
+         }
+       }
+ }
+
+test_survey_manages_post15:
+#測試統計，不限人群
+ - { username: deke1704,expect: True,
+     json:
+       {
+         "title": "問卷統計測試",
+         "content": "您好，我们是XXX，我们正在进行一项关于旅游的调查，想邀请您用几分钟时间帮忙填答这份问卷。本问卷实行匿名制，所有数据只用于统计分析， 请您放心填写。题目选项无对错之分，请您按自己的实际情况填写。谢谢您的帮助！",
+         "frequency": "ONLY_ONCE",
+         "startTime":,
+         "planExpireTime": "2021-01-05 19:00:00",
+         "peopleOriented": "UNLIMITED",
+         "questionList": [ {
+           "sortOrder": 0,
+           "title": "struts框架中，使用以下（ ）标签可以显示数据验证错误信息。",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": false,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "html:error/",
+             "imageIds": [ 1521 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "html:errors/",
+             "imageIds": [ 1522 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "logic:error/",
+             "imageIds": [ 1523 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "logic:errors/",
+             "imageIds": [ 1524 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 1,
+           "title": "请问您计划什么时间旅游？",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": true,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "周末",
+             "imageIds": [ 1525 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "节假日",
+             "imageIds": [ 1526 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "平时",
+             "imageIds": [ 1527 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "其他",
+             "imageIds": [ 1528 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 2,
+           "title": "下面哪个流类属于面向字符的输入流？（ ）",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": false,
+           "isMultipleChoice": True,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "BufferedWrite",
+             "imageIds": [ 1529 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "FileInputStream",
+             "imageIds": [ 1530 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "ObjectInputStream",
+             "imageIds": [ 1531 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "InputStreamReader",
+             "imageIds": [ 1532 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 3,
+           "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+           "type": "SUBJECTIVE_QUESTIONS",
+           "isMustAnswer": false,
+           "optionList": [ ],
+           "tips": "舉例説明",
+           "wordLimit": 500
+         } ],
+         "surveyManagers": {
+           "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+         },
+         "releasedRanges": {
+           "teacherIds": [ "80949", "80952", "80953", "80954" ,"2201","75612","75613","61650","61651","61657"],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705","mai1","mai2","mai3","test11","測試員12","test15" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ,"邢","mai2","mai3","test11","test12","test15"],
+           "groupIds": [ ],
+           "groupNames": [ ],
+           "groupEnNames": [ ]
+         }
+       }
+ }
+
+test_survey_manages_post16:
+#測試統計，不限人群
+ - { username: deke1704,expect: True,
+     json:
+       {
+         "title": "問卷統計測試",
+         "content": "您好，我们是XXX，我们正在进行一项关于旅游的调查，想邀请您用几分钟时间帮忙填答这份问卷。本问卷实行匿名制，所有数据只用于统计分析， 请您放心填写。题目选项无对错之分，请您按自己的实际情况填写。谢谢您的帮助！",
+         "frequency": "ONLY_ONCE",
+         "startTime":,
+         "planExpireTime": "2021-01-07 10:00:00",
+         "peopleOriented": "UNLIMITED",
+         "questionList": [ {
+           "sortOrder": 0,
+           "title": "struts框架中，使用以下（ ）标签可以显示数据验证错误信息。",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": false,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "html:error/",
+             "imageIds": [ 1521 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "html:errors/",
+             "imageIds": [ 1522 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "logic:error/",
+             "imageIds": [ 1523 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "logic:errors/",
+             "imageIds": [ 1524 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 1,
+           "title": "请问您计划什么时间旅游？",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": true,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "周末",
+             "imageIds": [ 1525 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "节假日",
+             "imageIds": [ 1526 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "平时",
+             "imageIds": [ 1527 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "其他",
+             "imageIds": [ 1528 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 2,
+           "title": "下面哪个流类属于面向字符的输入流？（ ）",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": false,
+           "isMultipleChoice": True,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "BufferedWrite",
+             "imageIds": [ 1529 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "FileInputStream",
+             "imageIds": [ 1530 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "ObjectInputStream",
+             "imageIds": [ 1531 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "InputStreamReader",
+             "imageIds": [ 1532 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 3,
+           "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+           "type": "SUBJECTIVE_QUESTIONS",
+           "isMustAnswer": false,
+           "optionList": [ ],
+           "tips": "舉例説明",
+           "wordLimit": 500
+         } ],
+         "surveyManagers": {
+           "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+         },
+         "releasedRanges": {
+           "teacherIds": [ "80949", "80952", "80953", "80954" ,"2201","75612","75613","61650","61651","61657"],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705","mai1","mai2","mai3","test11","測試員12","test15" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ,"邢","mai2","mai3","test11","test12","test15"],
+           "groupIds": [ ],
+           "groupNames": [ ],
+           "groupEnNames": [ ]
+         }
+       }
+ }
+
+test_survey_manages_post17:
+#測試停止發佈，全部教職工  "frequency": "EVERY_DAY"，"ONLY_ONCE"。選擇題有圖
+ - { username: deke1704,expect: True,
+     json:
+       {
+         "title": "問卷統計測試",
+         "content": "您好，我们是XXX，我们正在进行一项关于旅游的调查，想邀请您用几分钟时间帮忙填答这份问卷。本问卷实行匿名制，所有数据只用于统计分析， 请您放心填写。题目选项无对错之分，请您按自己的实际情况填写。谢谢您的帮助！",
+         "frequency": "EVERY_DAY",
+         "startTime": "2021-01-12 11:30:00",
+         "planExpireTime": "2021-01-20 11:30:00",
+         "peopleOriented": "RESTRICTED",
+         "questionList": [ {
+           "sortOrder": 0,
+           "title": "struts框架中，使用以下（ ）标签可以显示数据验证错误信息。",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": false,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "html:error/",
+             "imageIds": [ 1521 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "html:errors/",
+             "imageIds": [ 1522 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "logic:error/",
+             "imageIds": [ 1523 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "logic:errors/",
+             "imageIds": [ 1524 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 1,
+           "title": "请问您计划什么时间旅游？",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": true,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "周末",
+             "imageIds": [ 1525 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "节假日",
+             "imageIds": [ 1526 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "平时",
+             "imageIds": [ 1527 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "其他",
+             "imageIds": [ 1528 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 2,
+           "title": "下面哪个流类属于面向字符的输入流？（ ）",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": false,
+           "isMultipleChoice": True,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "BufferedWrite",
+             "imageIds": [ 1529 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "FileInputStream",
+             "imageIds": [ 1530 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "ObjectInputStream",
+             "imageIds": [ 1531 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "InputStreamReader",
+             "imageIds": [ 1532 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 3,
+           "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+           "type": "SUBJECTIVE_QUESTIONS",
+           "isMustAnswer": false,
+           "optionList": [ ],
+           "tips": "舉例説明",
+           "wordLimit": 500
+         } ],
+         "surveyManagers": {
+           "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+         },
+         "releasedRanges": {
+           "teacherIds": [ "80949", "80952", "80953", "80954" ,"2201","75612","75613","61650","61651","61657"],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705","mai1","mai2","mai3","test11","測試員12","test15" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ,"邢","mai2","mai3","test11","test12","test15"],
+           "groupIds": [ ],
+           "groupNames": [ ],
+           "groupEnNames": [ ]
+         }
+       }
+ }
+
+test_survey_manages_post18:
+#測試停止發佈，全部教職工  "frequency": "EVERY_DAY"，"ONLY_ONCE"，選擇題無圖
+ - { username: deke1704,expect: True,
+     json:
+       {
+         "title": "停止發佈測試-不要操作",
+         "content": "您好，我们是XXX，我们正在进行一项关于旅游的调查，想邀请您用几分钟时间帮忙填答这份问卷。本问卷实行匿名制，所有数据只用于统计分析， 请您放心填写。题目选项无对错之分，请您按自己的实际情况填写。谢谢您的帮助！",
+         "frequency": "EVERY_DAY",
+         "startTime":,
+         "planExpireTime": "2021-01-09 11:30:00",
+         "peopleOriented": "RESTRICTED",
+         "questionList": [ {
+           "sortOrder": 0,
+           "title": "struts框架中，使用以下（ ）标签可以显示数据验证错误信息。",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": false,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "html:error/",
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "html:errors/",
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "logic:error/",
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "logic:errors/",
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 1,
+           "title": "请问您计划什么时间旅游？",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": true,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "周末",
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "节假日",
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "平时",
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "其他",
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 2,
+           "title": "下面哪个流类属于面向字符的输入流？（ ）",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": false,
+           "isMultipleChoice": True,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "BufferedWrite",
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "FileInputStream",
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "ObjectInputStream",
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "InputStreamReader",
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 3,
+           "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+           "type": "SUBJECTIVE_QUESTIONS",
+           "isMustAnswer": false,
+           "optionList": [ ],
+           "tips": "舉例説明",
+           "wordLimit": 500
+         } ],
+         "surveyManagers": {
+           "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+         },
+         "releasedRanges": {
+           "teacherIds": [ "80949", "80952", "80953", "80954" ,"2201","75612","75613","61650","61651","61657"],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705","mai1","mai2","mai3","test11","測試員12","test15" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ,"邢","mai2","mai3","test11","test12","test15"],
+           "groupIds": [ ],
+           "groupNames": [ ],
+           "groupEnNames": [ ]
+         }
+       }
+ }
+
+test_survey_manages_post19:
+#測試到期不可填寫，學生教師  "frequency": "EVERY_DAY"，"ONLY_ONCE"，選擇題有圖
+ - { username: deke1704,expect: True,
+     json:
+       {
+         "title": "測試到期不可填寫-學生教師",
+         "content": "您好，我们是XXX，我们正在进行一项关于旅游的调查，想邀请您用几分钟时间帮忙填答这份问卷。本问卷实行匿名制，所有数据只用于统计分析， 请您放心填写。题目选项无对错之分，请您按自己的实际情况填写。谢谢您的帮助！",
+         "frequency": "ONLY_ONCE",
+         "startTime":,
+         "planExpireTime": "2021-01-06 15:40:00",
+         "peopleOriented": "RESTRICTED",
+         "questionList": [ {
+           "sortOrder": 0,
+           "title": "struts框架中，使用以下（ ）标签可以显示数据验证错误信息。",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": false,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "html:error/",
+             "imageIds": [ 1521 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "html:errors/",
+             "imageIds": [ 1522 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "logic:error/",
+             "imageIds": [ 1523 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "logic:errors/",
+             "imageIds": [ 1524 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 1,
+           "title": "请问您计划什么时间旅游？",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": true,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "周末",
+             "imageIds": [ 1525 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "节假日",
+             "imageIds": [ 1526 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "平时",
+             "imageIds": [ 1527 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "其他",
+             "imageIds": [ 1528 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 2,
+           "title": "下面哪个流类属于面向字符的输入流？（ ）",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": false,
+           "isMultipleChoice": True,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "BufferedWrite",
+             "imageIds": [ 1529 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "FileInputStream",
+             "imageIds": [ 1530 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "ObjectInputStream",
+             "imageIds": [ 1531 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "InputStreamReader",
+             "imageIds": [ 1532 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 3,
+           "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+           "type": "SUBJECTIVE_QUESTIONS",
+           "isMustAnswer": false,
+           "optionList": [ ],
+           "tips": "舉例説明",
+           "wordLimit": 500
+         } ],
+         "surveyManagers": {
+           "teacherIds": [ "80949", "80952", "80953", "80954", "75677", "75726", "75699" ],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705", "gray", "tao", "juning001" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705", "gray", "tao", "juning001" ]
+         },
+         "releasedRanges": {
+           "teacherIds": [ "80949", "80952", "80953", "80954" ,"2201","75612","75613","61650","61651","61657"],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705","mai1","mai2","mai3","test11","測試員12","test15" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ,"邢","mai2","mai3","test11","test12","test15"],
+           "studentIds": [ "9727", "9760", "9802", "9877", "9913", "9977" ],
+           "studentNames": [ "邱思嘉", "张欣怡", "秦华韫", "杨金川", "李贽吾", "陈序" ],
+           "studentEnNames": [ "QIU, SIJIA", "ZHANG, XINYI", "QIN, HUAYUN", "YANG, JINCHUAN", "LI, ZHIWU", "CHEN, XU" ],
+         }
+       }
+ }
+
+test_survey_manages_post20:
+#測試可見範圍，學生教師  "frequency": "EVERY_DAY"，"ONLY_ONCE"，選擇題有圖
+#UNLIMITED\RESTRICTED
+ - { username: deke1704,expect: True,
+     json:
+       {
+         "title": "測試可見範圍-學生教師",
+         "content": "您好，我们是XXX，我们正在进行一项关于旅游的调查，想邀请您用几分钟时间帮忙填答这份问卷。本问卷实行匿名制，所有数据只用于统计分析， 请您放心填写。题目选项无对错之分，请您按自己的实际情况填写。谢谢您的帮助！",
+         "frequency": "ONLY_ONCE",
+         "startTime":,
+         "planExpireTime": ,
+         "peopleOriented": "RESTRICTED",
+         "taskID": "2126",
+         "questionList": [ {
+           "sortOrder": 0,
+           "title": "struts框架中，使用以下（ ）标签可以显示数据验证错误信息。",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": false,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "html:error/",
+             "imageIds": [ 1521 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "html:errors/",
+             "imageIds": [ 1522 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "logic:error/",
+             "imageIds": [ 1523 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "logic:errors/",
+             "imageIds": [ 1524 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 1,
+           "title": "请问您计划什么时间旅游？",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": true,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "周末",
+             "imageIds": [ 1525 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "节假日",
+             "imageIds": [ 1526 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "平时",
+             "imageIds": [ 1527 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "其他",
+             "imageIds": [ 1528 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 2,
+           "title": "下面哪个流类属于面向字符的输入流？（ ）",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": false,
+           "isMultipleChoice": True,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "BufferedWrite",
+             "imageIds": [ 1529 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "FileInputStream",
+             "imageIds": [ 1530 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "ObjectInputStream",
+             "imageIds": [ 1531 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "InputStreamReader",
+             "imageIds": [ 1532 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 3,
+           "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+           "type": "SUBJECTIVE_QUESTIONS",
+           "isMustAnswer": false,
+           "optionList": [ ],
+           "tips": "舉例説明",
+           "wordLimit": 500
+         } ],
+         "surveyManagers": {
+           "teacherIds": [  "80954", "75677", "75726", "75699" ],
+           "techerNames": [ "德科1705", "gray", "tao", "juning001" ],
+           "teacherEnNames": [ "DEKE1705", "gray", "tao", "juning001" ]
+         },
+         "releasedRanges": {
+           "teacherIds": [ "80949", "80952", "80953", "80954" ,"2201","75612","75613","61650","61651","61657"],
+           "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705","mai1","mai2","mai3","test11","測試員12","test15" ],
+           "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705" ,"邢","mai2","mai3","test11","test12","test15"],
+           "studentIds": [ "9727", "9760", "9802", "9877", "9913", "9977" ],
+           "studentNames": [ "邱思嘉", "张欣怡", "秦华韫", "杨金川", "李贽吾", "陈序" ],
+           "studentEnNames": [ "QIU, SIJIA", "ZHANG, XINYI", "QIN, HUAYUN", "YANG, JINCHUAN", "LI, ZHIWU", "CHEN, XU" ],
+         }
+       }
+ }
+
+test_my_survey:
+  - {username: 1909853gla20002, title: 旅游调查全部學生，外部人員660, expect: False }
+#  - {username: 1709853zc111003, title: 旅游调查全部學生，外部人員660, expect: True }
+#  - {username: test10, title: 2021年01月23日2021/01/23旅游调查學生、教師、外部人員,存在主觀題非必填339, expect: True }
+#  - {username: test11, title: 2021年01月19日2021/01/19旅游调查教師部門，外部人員903, expect: True }
+#  - {username: test15, title: 2021年01月19日2021/01/19旅游调查教師部門，外部人員903, expect: True }
+
+test_get_stati_total:
+  - {username: deke1705,}
+#  - {username: test401,}

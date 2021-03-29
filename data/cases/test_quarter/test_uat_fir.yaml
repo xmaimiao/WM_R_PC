@@ -1,0 +1,130 @@
+test_survey_manages_for_admin:
+#測試可見範圍，學生教師  "frequency": "EVERY_DAY"，"ONLY_ONCE"，選擇題有圖
+ - { username: deke1704,expect: True,is_type: create,
+     json:
+       {
+         "title": "測試管理員可見範圍",
+         "content": "您好，我们是XXX，我们正在进行一项关于旅游的调查，想邀请您用几分钟时间帮忙填答这份问卷。本问卷实行匿名制，所有数据只用于统计分析， 请您放心填写。题目选项无对错之分，请您按自己的实际情况填写。谢谢您的帮助！",
+         "frequency": "ONLY_ONCE",
+         "startTime": "2020-12-23 12:05:00",
+         "planExpireTime": ,
+         "peopleOriented": "RESTRICTED",
+         "questionList": [ {
+           "sortOrder": 0,
+           "title": "struts框架中，使用以下（ ）标签可以显示数据验证错误信息。",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": false,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "html:error/",
+             "imageIds": [ 1521 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "html:errors/",
+             "imageIds": [ 1522 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "logic:error/",
+             "imageIds": [ 1523 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "logic:errors/",
+             "imageIds": [ 1524 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 1,
+           "title": "请问您计划什么时间旅游？",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": true,
+           "isMultipleChoice": true,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "周末",
+             "imageIds": [ 1525 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "节假日",
+             "imageIds": [ 1526 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "平时",
+             "imageIds": [ 1527 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "其他",
+             "imageIds": [ 1528 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 2,
+           "title": "下面哪个流类属于面向字符的输入流？（ ）",
+           "type": "MULTIPLE_CHOICE",
+           "isMustAnswer": false,
+           "isMultipleChoice": True,
+           "optionList": [ {
+             "sortOrder": 0,
+             "description": "該項需要符合史實",
+             "title": "BufferedWrite",
+             "imageIds": [ 1529 ]
+           }, {
+             "sortOrder": 1,
+             "description": "該項需要符合史實",
+             "title": "FileInputStream",
+             "imageIds": [ 1530 ]
+           }, {
+             "sortOrder": 2,
+             "description": "該項需要符合史實",
+             "title": "ObjectInputStream",
+             "imageIds": [ 1531 ]
+           }, {
+             "sortOrder": 3,
+             "description": "該項需要符合史實",
+             "title": "InputStreamReader",
+             "imageIds": [ 1532 ],
+             "isInput": true
+           } ]
+         }, {
+           "sortOrder": 3,
+           "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+           "type": "SUBJECTIVE_QUESTIONS",
+           "isMustAnswer": false,
+           "optionList": [ ],
+           "tips": "舉例説明",
+           "wordLimit": 500
+         } ],
+         "surveyManagers": {
+            "teacherIds": [ "80949", "80952", "80953", "80954"],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705"],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705"]
+         },
+         "releasedRanges": {
+            "teacherIds": [ "80949", "80952", "80953", "80954"],
+            "techerNames": [ "德科1700", "德科1703", "德科1704", "德科1705" ],
+            "teacherEnNames": [ "DEKE1700", "DEKE1703", "DEKE1704", "DEKE1705"],
+           "studentIds": [ "9727", "9760", "9802", "9877", "9913", "9977" ],
+           "studentNames": [ "邱思嘉", "张欣怡", "秦华韫", "杨金川", "李贽吾", "陈序" ],
+           "studentEnNames": [ "QIU, SIJIA", "ZHANG, XINYI", "QIN, HUAYUN", "YANG, JINCHUAN", "LI, ZHIWU", "CHEN, XU" ],
+         }
+       }
+     }
+ - {username: deke1700,is_type: search,expect: True }
+ - {username: deke1703,is_type: search,expect: True }
+ - {username: deke1705,is_type: search,expect: True }
+ - {username: deke1706,is_type: search,expect: False }
+ - {username: deke1704,is_type: remove}
+
+
+
+#           "teacherIds": [  "75814", "75815", "75816", "75817" ],
+#           "techerNames": [ "test400", "test401", "test402", "test403" ],
+#           "teacherEnNames": [ "test400", "test401", "test402", "test403" ],

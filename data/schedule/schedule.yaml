@@ -1,0 +1,8 @@
+events:
+  method :  get
+  url : schedule-url/events?lang=zh_MO
+  headers:
+    Authorization: ${token}
+  params :
+    endTime: ${endTime}
+    startTime: ${startTime}

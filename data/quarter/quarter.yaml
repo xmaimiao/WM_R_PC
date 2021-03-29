@@ -1,0 +1,42 @@
+survey_manages:
+  method :  get
+  url : quarter-url/survey-manages?lang=zh_MO&nonce=592a1fdf-b741-41cc-a915-4fd621992715&signature=12
+  headers:
+    Authorization: ${token}
+
+survey_manages_post:
+  method :  post
+  url : quarter-url/survey-manages?lang=zh_MO&nonce=592a1fdf-b741-41cc-a915-4fd621992715&signature=12
+  headers:
+    Authorization: ${token}
+
+remove:
+  method :  post
+  url : quarter-url/survey-manages/${id}/remove?lang=zh_MO&nonce=592a1fdf-b741-41cc-a915-4fd621992715&signature=12
+  headers:
+    Authorization: ${token}
+
+
+my_survey:
+  method :  get
+  url : quarter-url/my-survey?lang=zh_MO&nonce=592a1fdf-b741-41cc-a915-4fd621992715&signature=12
+  headers:
+    Authorization: ${token}
+
+my_survey_submit:
+  method :  get
+  url : quarter-url//my-survey/${my_survey_id}/submit?lang=zh_MO&nonce=592a1fdf-b741-41cc-a915-4fd621992715&signature=12
+  headers:
+    Authorization: ${token}
+
+import_outsider:
+  method :  post
+  url : quarter-url/attachments/import-outsider?lang=zh_MO&nonce=592a1fdf-b741-41cc-a915-4fd621992715&signature=12
+  headers:
+    Authorization: ${token}
+
+survey_statistics:
+  method :  get
+  url : quarter-url/survey-statistics?lang=zh_MO&nonce=592a1fdf-b741-41cc-a915-4fd621992715&signature=12
+  headers:
+    Authorization: ${token}

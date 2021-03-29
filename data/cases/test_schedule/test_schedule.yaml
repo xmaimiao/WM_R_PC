@@ -1,0 +1,6 @@
+test_teacher_events:
+  - {username: test400, date: "2020-12-20",title: 測試日程接口事件, expect: True}
+  - {username: test401, date: "2020-12-20",title: 測試日程接口事件, expect: True}
+  - {username: test402, date: "2020-12-20",title: 測試日程接口事件, expect: True}
+  - {username: test403, date: "2020-12-20",title: 測試日程接口事件, expect: True}
+  - {username: test404, date: "2020-12-20",title: 測試日程接口事件, expect: False}

@@ -1,0 +1,57 @@
+test_change_room:
+  - {username: pyyan, json: {"roomSn": "O302"},expect: True }
+test_teacher_lesson:
+  - {username: pyyan,expect: True }
+
+test_student_sign:
+#首簽
+  - {username: 16098535-C111-0012,json: [{"electricPower": 0,"major": 10002,"minor": 10008,"uuid": "ABCD0001-ABCD-ABCD-ABCD-ABCD00001112"}]}
+  - {username: 1609853A-C111-0061,json: [{"electricPower": 0,"major": 10002,"minor": 10008,"uuid": "ABCD0001-ABCD-ABCD-ABCD-ABCD00001112"}]}
+  - {username: 1609853A-C111-0073,json: [{"electricPower": 0,"major": 10002,"minor": 10008,"uuid": "ABCD0001-ABCD-ABCD-ABCD-ABCD00001112"}]}
+#遲到
+#  - {username: 1609853A-C111-0032,json: [{"electricPower": 0,"major": 10002,"minor": 10008,"uuid": "ABCD0001-ABCD-ABCD-ABCD-ABCD00001112"}]}
+#  - {username: 1609853A-C111-0086,json: [{"electricPower": 0,"major": 10002,"minor": 10008,"uuid": "ABCD0001-ABCD-ABCD-ABCD-ABCD00001112"}]}
+#  - {username: 1609853A-C111-0116,json: [{"electricPower": 0,"major": 10002,"minor": 10008,"uuid": "ABCD0001-ABCD-ABCD-ABCD-ABCD00001112"}]}
+#次簽
+#  - {username: 1609853A-C111-0061,json: [{"electricPower": 0,"major": 10002,"minor": 10008,"uuid": "ABCD0001-ABCD-ABCD-ABCD-ABCD00001112"}]}
+#  - {username: 1609853A-C111-0086,json: [{"electricPower": 0,"major": 10002,"minor": 10008,"uuid": "ABCD0001-ABCD-ABCD-ABCD-ABCD00001112"}]}
+#  - {username: 1609853A-C111-0172,json: [{"electricPower": 0,"major": 10002,"minor": 10008,"uuid": "ABCD0001-ABCD-ABCD-ABCD-ABCD00001112"}]}
+
+test_student_sign_late:
+  - { t_username: pyyan,s_username: 1609853A-C111-0032,json: [ { "electricPower": 0,"major": 10002,"minor": 10008,"uuid": "ABCD0001-ABCD-ABCD-ABCD-ABCD00001112" } ] }
+  - { t_username: pyyan,s_username: 1609853A-C111-0086,json: [ { "electricPower": 0,"major": 10002,"minor": 10008,"uuid": "ABCD0001-ABCD-ABCD-ABCD-ABCD00001112" } ] }
+  - { t_username: pyyan,s_username: 1609853A-C111-0116,json: [ { "electricPower": 0,"major": 10002,"minor": 10008,"uuid": "ABCD0001-ABCD-ABCD-ABCD-ABCD00001112" } ] }
+
+test_app_resign:
+#首簽
+#  - {username: pyyan, params: {"num": "1"},
+#     studentNo_list: ["1609853A-C111-0058","1609853A-C111-0144","1609853A-C111-0172"],resign_json: {"remark": app補簽成功} }
+#次簽
+#  - {username: pyyan, params: {"num": "2"},
+#     studentNo_list: ["1609853A-C111-0073","1609853A-C111-0116","1609853A-C111-0144"],resign_json: {"remark": app補簽成功} }
+# 其他测试补签
+  - {username: pyyan, params: {"num": "4"},
+     studentNo_list: ["16098535-C111-0012","1609853A-C111-0061","1609853A-C111-0086"],resign_json: {"remark": app補簽成功，检查学生签到记录} }
+
+test_statistics_degrees:
+# 1.PRESENT,出席, 2.LATE,遲到, 3.ABSENT,缺席, 4.LACK,曠課, 5.EARLY,早退, 6.UNKNOW,未知;
+#雲課堂
+  - { username: xplu, params: { "classCode": "D01","programCode": "GIT001","maxPageItems": 300,"offsetStart": 1,"termCode": 2009,},
+      lessondate: "2020-09-26", stu_dict:
+        {'19098532-A111-0017': 'PRESENT','19098533-A111-0016': 'EARLY' ,'19098533-A111-0029': 'EARLY',
+         '19098533-A111-0031': 'LATE','19098533-A111-0044': 'LATE','19098533-A111-0057': 'LATE',} }
+
+#一般課程  16098535-C111-0012刘静瑛
+#  - { username: pyyan, params: { "classCode": "D1","programCode": "BC2042","maxPageItems": 30,"offsetStart": 1,"termCode": 2009,},
+#      lessondate: "2021-03-02", stu_dict:
+#        {'16098535-C111-0012': 'EARLY' ,'1609853A-C111-0032': 'LATE',
+#         '1609853A-C111-0058': 'EARLY','1609853A-C111-0061': 'PRESENT','1609853A-C111-0073': 'PRESENT',
+#         '1609853A-C111-0116': 'LATE','1609853A-C111-0144': 'PRESENT','1609853A-C111-0172': 'PRESENT'} }
+#  - { username: pyyan, params: { "classCode": "D1","programCode": "BC2042","maxPageItems": 30,"offsetStart": 2,"termCode": 2009,},
+#      lessondate: "2021-03-02", stu_dict:
+#        {'16098533-C111-0014': 'LACK','1609853A-C111-0086': 'LATE',} }
+
+
+#  - { username: pyyan, params: { "classCode": "D1","programCode": "BC2042","maxPageItems": 40,"offsetStart": 1,"termCode": 2009},
+#      lessondate: "2021-02-26", stu_dict:
+#        {'陳芷君': 'PRESENT','曾志達': 'PRESENT' ,} }

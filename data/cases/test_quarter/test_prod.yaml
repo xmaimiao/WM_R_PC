@@ -1,0 +1,126 @@
+test_survey_manages_post:
+  - {username: test41-test,expect: True,
+     json:
+       {
+         "title": "旅游调查學生、教師",
+         "content": "您好，我们是XXX，我们正在进行一项关于旅游的调查，想邀请您用几分钟时间帮忙填答这份问卷。本问卷实行匿名制，所有数据只用于统计分析， 请您放心填写。题目选项无对错之分，请您按自己的实际情况填写。谢谢您的帮助！",
+         "frequency": "ONLY_ONCE",
+         "startTime": "2021-03-16 16:48:00",
+         "planExpireTime": "2021-03-18 16:51:00",
+         "peopleOriented": "RESTRICTED",
+         "questionList": [
+           {
+             "sortOrder": 0,
+             "title": "请问您最近3个月是否有出游计划？",
+             "type": "MULTIPLE_CHOICE",
+             "isMustAnswer": true,
+             "isMultipleChoice": true,
+             "optionList": [
+               {
+                 "sortOrder": 0,
+                 "description": "該項需要符合史實",
+                 "title": "是"
+               },
+               {
+                 "sortOrder": 1,
+                 "description": "該項需要符合史實",
+                 "title": "否"
+               }
+             ]
+           },
+           {
+             "sortOrder": 1,
+             "title": "请问您计划什么时间旅游？",
+             "type": "MULTIPLE_CHOICE",
+             "isMustAnswer": false,
+             "isMultipleChoice": true,
+             "optionList": [
+               {
+                 "sortOrder": 0,
+                 "description": "該項需要符合史實",
+                 "title": "周末"
+               },
+               {
+                 "sortOrder": 1,
+                 "description": "該項需要符合史實",
+                 "title": "节假日"
+               },
+               {
+                 "sortOrder": 2,
+                 "description": "該項需要符合史實",
+                 "title": "平时"
+               },
+               {
+                 "sortOrder": 3,
+                 "description": "該項需要符合史實",
+                 "title": "其他",
+                 "isInput": true
+               }
+             ]
+           },
+           {
+             "sortOrder": 2,
+             "title": "请使用三目运算符描述以下代码：If(a0){B=1;}eles{B=2;}",
+             "type": "SUBJECTIVE_QUESTIONS",
+             "isMustAnswer": false,
+             "optionList": [ ],
+             "wordLimit": 200
+           }
+         ],
+         "surveyManagers": {
+           "teacherIds": [
+               "82232",
+           ],
+           "techerNames": [
+               "测试41-test",
+           ],
+           "teacherEnNames": [
+               "TEST41-TEST",
+           ]
+         },
+         "releasedRanges": {
+           "teacherIds": [
+               "82232"
+           ],
+           "techerNames": [
+               "测试41-test"
+           ],
+           "teacherEnNames": [
+               "TEST41-TEST"
+           ],
+           "groupIds": [ ],
+           "groupNames": [ ],
+           "groupEnNames": [ ],
+           "studentIds": [
+               "75308",
+           ],
+           "studentNames": [
+               "测试学生3",
+           ],
+           "studentEnNames": [
+               "student3-test",
+           ],
+           "facultyEnNames": [ ],
+           "facultyIds": [ ],
+           "facultyNames": [ ],
+           "majorCodes": [ ],
+           "majorNames": [ ],
+           "majorEnNames": [ ],
+           "programCodes": [ ],
+           "programNames": [ ],
+           "programEnNames": [ ],
+           "entryTerms": [ ],
+           "studentTypes": [ ],
+           "studentTypeNames": [ ],
+           "studentTypeEnNames": [ ],
+           "studentStatuses": [ ],
+           "studentStatusNames": [ ],
+           "dormTypes": [ ],
+           "releasedRanges": [
+               "PERSON"
+           ],
+           "studentReleasedRanges": [
+               "PERSON"
+           ]
+         }
+       }}

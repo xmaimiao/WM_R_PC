@@ -1,0 +1,77 @@
+change_room:
+  method :  post
+  url : class-timetable-url/call-rolls/teacher/lessons/room?lang=zh_MO
+  headers:
+    Authorization: ${token}
+
+lessons_recent:
+  method :  get
+  url : class-timetable-url/call-rolls/teacher/lessons/recent?lang=zh_MO
+  headers:
+    Authorization: ${token}
+
+teacher_lessons:
+  method :  post
+  url : class-timetable-url/call-rolls/teacher/lessons?lang=zh_MO
+  headers:
+    Authorization: ${token}
+
+recent:
+  method :  get
+  url : class-timetable-url/lessons/recent?lang=zh_MO
+  headers:
+    Authorization: ${token}
+
+lessons_student_now_sync:
+  method :  get
+  url : class-timetable-url/lessons/student/now/sync?lang=zh_MO
+  headers:
+    Authorization: ${token}
+
+classdatas_deg_course_managers:
+  method :  get
+  url : class-timetable-url/classdatas/deg-course-managers?lang=zh_MO
+  headers:
+    Authorization: ${token}
+
+sign_statistics_degrees_students:
+  method :  get
+  url : class-timetable-url/sign-statistics/degrees/students?lang=zh_MO
+  headers:
+    Authorization: ${token}
+
+sign_statistics_degrees_resign_absent:
+  method :  post
+  url : class-timetable-url/sign-statistics/degrees/resign-absent?lang=zh_MO
+  headers:
+    Authorization: ${token}
+
+sign_records_users:
+  method :  get
+  url : class-timetable-url/sign-records/users?lang=zh_MO
+  headers:
+    Authorization: ${token}
+
+sign_records_lessons:
+  method :  get
+  url : class-timetable-url/sign-records/lessons?lang=zh_MO
+  headers:
+    Authorization: ${token}
+
+resign_mobiles:
+  method :  post
+  url : class-timetable-url/sign-records/resign-mobiles?lang=zh_MO
+  headers:
+    Authorization: ${token}
+
+sign:
+  method :  post
+  url : class-timetable-url/sign-records/${id}/sign?lang=zh_MO
+  headers:
+    Authorization: ${token}
+
+settings:
+  method: get
+  url: class-timetable-url/settings?lang=zh_MO
+  headers:
+    Authorization: ${token}

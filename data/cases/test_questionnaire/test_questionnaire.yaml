@@ -1,0 +1,28 @@
+test_teacher_all:
+#dev
+  - {username: test36-test}
+  - {username: test35-test}
+  - {username: test37-test}
+  - {username: test38-test}
+  - {username: test39-test}
+  - {username: deke1700}
+  - {username: deke1703}
+  - {username: deke1704}
+  - {username: deke1705}
+  - {username: deke2700}
+  - {username: deke2701}
+  - {username: deke2702}
+  - {username: deke2703}
+  - {username: mai1}
+  - {username: mai2}
+  - {username: mai3}
+  - {username: pyyan}
+
+test_student_all:
+  - {username: 1709853S-A011-0041,password: wemust}
+  - {username: 1709853S-B111-0032,password: wemust@dev}
+  - {username: 1709853T-A011-0011,password: wemust@dev}
+  - {username: 1709853U-B011-0067,password: wemust@dev}
+  - {username: 1709853U-B211-0017,password: wemust@dev}
+  - {username: 1709853U-PA11-0011,password: wemust#2020}
+  - {username: 1609853A-C111-0215,password: wemust#2020}

@@ -1,6 +1,6 @@
 questionnaire_s:
   method :  post
-  url : testing-studio/student-health-mobiles?lang=zh_MO&nonce=592a1fdf-b741-41cc-a915-4fd621992715&signature=12
+  url : questionnaire-url/student-health-mobiles?lang=zh_MO&nonce=592a1fdf-b741-41cc-a915-4fd621992715&signature=12
   headers:
     Authorization: ${token}
   json :
@@ -21,7 +21,7 @@ questionnaire_s:
 
 questionnaire_t:
   method :  post
-  url : testing-studio/teacher-health?lang=zh_MO&nonce=592a1fdf-b741-41cc-a915-4fd621992715&signature=12
+  url : questionnaire-url/teacher-health?lang=zh_MO&nonce=592a1fdf-b741-41cc-a915-4fd621992715&signature=12
   headers:
     Authorization: ${token}
   json :
